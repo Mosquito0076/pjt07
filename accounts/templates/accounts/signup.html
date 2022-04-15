@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load bootstrap5 %}
+
+{% block content %}
+<h1><strong>Signup</strong></h1><br>
+<form action="{% url 'accounts:signup' %}" method="POST">
+  {% csrf_token %}
+  {% bootstrap_form form %}
+  <input class="btn btn-primary" type="submit" value="Submit">
+</form>
+<a class="btn btn-danger" href="{% url 'movies:index' %}">BACK</a>
+{% endblock content %}
